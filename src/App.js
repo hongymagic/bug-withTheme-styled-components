@@ -3,6 +3,7 @@
 import React, { Component } from 'react';
 import { ThemeProvider } from 'styled-components';
 import Bar from './Bar';
+import Foo from './Foo';
 import logo from './logo.svg';
 import './App.css';
 
@@ -16,6 +17,7 @@ class App extends Component {
     return (
       <ThemeProvider theme={MyTheme}>
         <Bar />
+        <Foo />
         <div className="App">
           <div className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
