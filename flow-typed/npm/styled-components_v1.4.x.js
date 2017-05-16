@@ -18,7 +18,7 @@ declare module 'styled-components' {
     theme: ((outerTheme: Theme) => void) | Theme
   };
   declare type Component =
-    | React$Component<*, *, *>
+    | Class<React$Component<*, *, *>>
     | (props: *) => React$Element<*>;
 
   declare class ThemeProvider extends React$Component {
@@ -29,7 +29,7 @@ declare module 'styled-components' {
     injectGlobal: (strings: Array<string>, ...interpolations: Array<Interpolation>) => void,
     css: (strings: Array<string>, ...interpolations: Array<Interpolation>) => Array<Interpolation>,
     keyframes: (strings: Array<string>, ...interpolations: Array<Interpolation>) => string,
-    withTheme: (component: Component) => React$Component<*, ThemeProviderProps, *>,
+    withTheme: (component: Component) => Class<React$Component<*, ThemeProviderProps, *>>,
     ThemeProvider: typeof ThemeProvider,
     (baseComponent: Component): StyledComponent,
     a: StyledComponent,
